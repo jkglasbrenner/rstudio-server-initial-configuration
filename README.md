@@ -10,14 +10,14 @@
 
 ## Overview
 
-A set of helper functions to help you configure RStudio Server for use in CDS 101.
+A set of helper functions to help you configure RStudio Server for use in CDS 101 and CDS 102.
 RStudio Server is a web-app version of RStudio, a full-featured editor for R with a user-friendly design.
 
 ## Prerequisites
 
 To be able to use RStudio Server, you must:
 
-*   Be a student at George Mason University and registered for CDS 101.
+*   Be a student at George Mason University and registered for CDS 101 and/or CDS 102.
 
 *   Using a laptop or desktop computer with a working internet connection that has up-to-date versions installed of either [Google Chrome](https://www.google.com/chrome/) (recommended) or [Mozilla Firefox](https://www.mozilla.org/en-US/firefox/).
     *The RStudio Server page may not render correctly if you access it using Apple Safari, Microsoft Edge, and Internet Explorer, or if you try to access it using a phone or tablet.*
@@ -26,7 +26,7 @@ To be able to use RStudio Server, you must:
 
 Navigate to RStudio Server <https://rstudio.cos.gmu.edu> using your web browser and login using your NetID and password.
 If this is the first time you are logging in, you will need to use the temporary password that was shared with you.
-If you cannot login, please post a message in the [\#r-rstudio-github-help](https://sp19-masoncds101.slack.com/messages/CFJKJV97T) Slack channel.
+If you cannot login, please post a message in the \#r-rstudio-github-help Slack channel.
 
 ### How to change your temporary password
 
@@ -87,7 +87,7 @@ Click the **Apply** button on the lower-right of the pop-up window, followed by 
 ### Cloning this repository and running the configuration script
 
 After you've changed your temporary password and disabled the `.RData` file, the next step is to clone this repository as a new project in RStudio Server.
-To do this, click on the **New Project** button, then **Version Control**, then **Git**, and then paste <https://github.com/mason-sp19-cds-101-dl1/rstudio-server-initial-configuration.git> into the *Repository URL* box, and finally click **Create Project**.
+To do this, click on the **New Project** button, then **Version Control**, then **Git**, and then paste <https://github.com/jkglasbrenner/rstudio-server-initial-configuration.git> into the *Repository URL* box, and finally click **Create Project**.
 
 ![](img/rstudio_server_config_clone.gif)
 
@@ -134,7 +134,7 @@ Once the installation procedure is complete, look for **Session** in the top men
 
 ![](img/rstudio_session_menu.png)
 
-RStudio Server is now configured for use in CDS 101!
+RStudio Server is now configured for use in CDS 101 and CDS 102!
 
 ## License
 
