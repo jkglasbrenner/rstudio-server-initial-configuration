@@ -103,3 +103,76 @@ install_usethis_and_remotes_pkgs <- function() {
 install_course_dependencies <- function(threads) {
   remotes::install_deps(threads = threads)
 }
+
+export_package_versions <- function() {
+  session_output <- get_session_info()
+  df_packages <- make_package_versions_table(session_output)
+
+  readr::write_excel_csv(
+    x = df_packages,
+    path = "packages.csv"
+  )
+}
+
+make_package_versions_table <- function(session_output) {
+  session_output <- stringr::str_flatten(
+    string = session_output,
+    collapse = ""
+  )
+  string_package_versions <- stringr::str_extract(
+    string = session_output,
+    pattern = "(?<=Package version:).*(?=Pandoc)"
+  )
+  string_package_versions <- stringr::str_squish(
+    string = string_package_versions
+  )
+  vector_package_versions <- purrr::pluck(
+    stringr::str_split(
+      string = string_package_versions,
+      pattern = "\\s+"
+    ),
+    1
+  )
+  df_packages <- tibble::tibble(
+    package = vector_package_versions
+  )
+
+  tidyr::separate(
+    data = df_packages,
+    col = package,
+    into = dplyr::combine(
+      "package",
+      "version"
+    ),
+    sep = "_"
+  )
+}
+
+get_session_info <- function() {
+  xfun::session_info(
+    packages = dplyr::combine(
+      "broom",
+      "dplyr",
+      "forcats",
+      "fs",
+      "ggplot2",
+      "highcharter",
+      "infer",
+      "leaflet",
+      "lubridate",
+      "modelr",
+      "nycflights13",
+      "purrr",
+      "readr",
+      "rmarkdown",
+      "robotstxt",
+      "rtweet",
+      "rvest",
+      "shiny",
+      "stringr",
+      "tidyr",
+      "tidyverse"
+    ),
+    dependencies = FALSE
+  )
+}
